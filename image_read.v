@@ -7,7 +7,7 @@ module image_read
 			INFILE  = "IMGx.hex", 	
 			Vsync_delay = 100, 				
 			Hsync_delay = 160,					
-			brt_value= 100,								
+			brt_value= 100,	// brightness value							
 			THRESHOLD= 90,
 			SIGN=1,																				
 			valueToAdd = 10,					
@@ -32,20 +32,23 @@ module image_read
 );			
 
 parameter clour_bit = 8;					
-parameter Ttl_rgb = 1179648; 		
-localparam		Idle_st 	= 2'b00,		
-				Vsync_st	= 2'b01,			
-				Hsync_st	= 2'b10,			
-				Data_st		= 2'b11;		
-reg [1:0] cstate, 						
-		  nstate;									
+parameter Ttl_rgb = 1179648; 		// height*width*3
+localparam	Idle_st = 2'b00,		
+		Vsync_st = 2'b01,			
+		Hsync_st = 2'b10,			
+		Data_st	= 2'b11;		
+reg [1:0] cstate, nstate;
+	
 reg start;									
-reg Reset_d;								
-reg 		Vsync_run; 				
-reg [8:0]	Vsync_cnt;			
-reg 		Hsync_run;				
-reg [8:0]	Hsync_cnt;			
-reg 		Data_run;					
+reg Reset_d;
+	
+reg Vsync_run; 				
+reg [8:0]Vsync_cnt;
+	
+reg Hsync_run;				
+reg [8:0]Hsync_cnt;
+	
+reg Data_run;					
 reg [7 : 0]   total_memory [0 : Ttl_rgb-1];	
 integer temp_BMP   [0 : Im_width*Im_height*3 - 1];			
 integer org_R  [0 : Im_width*Im_height - 1]; 	
