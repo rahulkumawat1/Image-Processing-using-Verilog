@@ -58,7 +58,7 @@ initial begin
 	BMP_header[27] =  0;
 end
 always@(posedge clk,negedge Reset) begin
-    if(!Reset) begin
+	if(!Reset) begin				// m is traverse in a single row, l is num of rows which has traversed 
         l <= 0;
         m <= 0;
     end else begin
