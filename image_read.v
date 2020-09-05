@@ -37,7 +37,7 @@ localparam	Idle_st = 2'b00,
 		Vsync_st = 2'b01,			
 		Hsync_st = 2'b10,			
 		Data_st	= 2'b11;		
-reg [1:0] cstate, nstate;
+	reg [1:0] cstate, nstate;	// current state, next state
 	
 reg start;									
 reg Reset_d;
