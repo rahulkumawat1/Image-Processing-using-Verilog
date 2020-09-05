@@ -200,7 +200,7 @@ begin
     end
 end
 assign Vsync = Vsync_run;
-assign flag = (data_count == 131071)? 1'b1: 1'b0; 
+	assign flag = (data_count == 131071)? 1'b1: 1'b0; 	// (width*height)/3 processing 3 pixels simultaneously
 
 always @(*) begin
 	
