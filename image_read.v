@@ -9,7 +9,7 @@ module image_read
 			Hsync_delay = 160,					
 			brt_value= 100,	// brightness value							
 			THRESHOLD= 90,
-			SIGN=1,		// increase brightness																		
+			SIGN=1,		// increase brightness,	valueToAdd in contrast																		
 			valueToAdd = 10,					
 			valueToSubstract = 15
 			
